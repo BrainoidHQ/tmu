@@ -4,8 +4,7 @@
   "license": "MIT",
   "author": "Kousuke Takaki <yoseio@brainoid.dev>",
   "exports": {
-    "./base": "./base.js",
-    "./react": "./react.js"
+    "./*": "./*.js"
   },
   "scripts": {
     "lint": "run-s lint:*",

@@ -1,12 +1,12 @@
-import ts from "typescript-eslint";
-import react from "eslint-plugin-react";
-import a11y from "eslint-plugin-jsx-a11y";
+import ESLintTS from "typescript-eslint";
+import ESLintPluginReact from "eslint-plugin-react";
+import ESLintPluginJsxA11y from "eslint-plugin-jsx-a11y";
 
-import base from "./base.js";
+import ts from "./ts.js";
 
-export default ts.config(
-  base,
-  react.configs.flat?.["recommended"] ?? {},
-  react.configs.flat?.["jsx-runtime"] ?? {},
-  a11y.flatConfigs.recommended,
+export default ESLintTS.config(
+  ts,
+  ESLintPluginReact.configs.flat?.["recommended"] ?? {},
+  ESLintPluginReact.configs.flat?.["jsx-runtime"] ?? {},
+  ESLintPluginJsxA11y.flatConfigs.recommended,
 );

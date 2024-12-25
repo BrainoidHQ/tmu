@@ -1,4 +1,3 @@
-import js from "@eslint/js";
-import ts from "typescript-eslint";
+import js from "./js.js";
 
-export default ts.config(js.configs.recommended);
+export default js;
