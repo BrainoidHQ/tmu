@@ -1,0 +1,15 @@
+{
+  "name": "@brainoid-tmu/eslintrc",
+  "version": "0.1.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@brainoid-tmu/tsconfig": "^0.1.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-turbo": "^2.3.3"
+  },
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  }
+}
