@@ -26,5 +26,13 @@ export default ts.config(
         }),
       ],
     },
+    rules: {
+      "@typescript-eslint/prefer-promise-reject-errors": [
+        "error",
+        {
+          allowThrowingUnknown: true,
+        },
+      ],
+    },
   },
 );
