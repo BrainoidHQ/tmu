@@ -1,6 +1,8 @@
 {
   "name": "@brainoid-tmu/web",
   "version": "0.1.0",
+  "license": "MIT",
+  "author": "Kousuke Takaki <yoseio@brainoid.dev>",
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
