@@ -1,25 +1,28 @@
 {
-  "name": "crawler",
-  "version": "0.0.1",
-  "type": "module",
-  "description": "This is an example of a Crawlee project.",
+  "name": "@brainoid-tmu/crawler",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Kousuke Takaki <yoseio@brainoid.dev>",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/main.ts",
+    "start": "node dist/main.js",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint .",
+    "lint:tsc": "tsc --pretty --noEmit"
+  },
   "dependencies": {
     "crawlee": "^3.0.0",
     "playwright": "*"
   },
   "devDependencies": {
-    "@apify/tsconfig": "^0.1.0",
+    "@brainoid-tmu/eslint": "*",
+    "@brainoid-tmu/tsconfig": "*",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.17.0",
     "tsx": "^4.4.0",
-    "typescript": "~5.7.0",
-    "@types/node": "^22.0.0"
+    "typescript": "~5.7.0"
   },
-  "scripts": {
-    "start": "npm run start:dev",
-    "start:prod": "node dist/main.js",
-    "start:dev": "tsx src/main.ts",
-    "build": "tsc",
-    "test": "echo \"Error: oops, the actor has no tests yet, sad!\" && exit 1"
-  },
-  "author": "It's not you it's me",
-  "license": "ISC"
+  "private": true,
+  "type": "module"
 }

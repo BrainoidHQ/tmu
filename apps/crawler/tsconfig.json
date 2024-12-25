@@ -1,12 +1,5 @@
 {
-  "extends": "@apify/tsconfig",
-  "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "target": "ES2022",
-    "outDir": "dist",
-    "noUnusedLocals": false,
-    "lib": ["DOM"]
-  },
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@brainoid-tmu/tsconfig/crawlee",
   "include": ["./src/**/*"]
 }
