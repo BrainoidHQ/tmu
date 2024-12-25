@@ -1,3 +1,6 @@
 import react from "@brainoid-tmu/eslint/react";
+import ts from "typescript-eslint";
 
-export default react;
+export default ts.config(react, {
+  ignores: ["eslint.config.js", "postcss.config.js"],
+});
