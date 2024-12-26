@@ -4,7 +4,6 @@
   "license": "MIT",
   "author": "Kousuke Takaki <yoseio@brainoid.dev>",
   "devDependencies": {
-    "@apify/tsconfig": "^0.1.0",
     "@tsconfig/remix": "^2.0.5",
     "@tsconfig/strictest": "^2.0.5"
   },

@@ -1,12 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": ["@brainoid-tmu/tsconfig/base.json", "@apify/tsconfig"],
+  "extends": "@brainoid-tmu/tsconfig/base.json",
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "target": "ES2022",
+    "lib": ["DOM"],
+    "module": "ESNext",
+    "moduleResolution": "node10",
     "outDir": "dist",
-    "noUnusedLocals": false,
-    "lib": ["DOM"]
+    "target": "ES2022"
   }
 }
