@@ -1,21 +1,33 @@
 import { createCheerioRouter } from "crawlee";
 
+import { getLink, LINK_PATTERN_1, SYLLABUS_PATH } from "./lib";
+import { parseRawSyllabusData } from "./syllabus";
+
 export const router = createCheerioRouter();
 
-router.addDefaultHandler(async ({ enqueueLinks, log }) => {
-  log.info(`enqueueing new URLs`);
+router.addDefaultHandler(async ({ $, enqueueLinks }) => {
+  const urls = $("a")
+    .map((_, el) => $(el).attr("onclick"))
+    .get()
+    .map(getLink(LINK_PATTERN_1, SYLLABUS_PATH))
+    .filter(Boolean) as string[];
+
   await enqueueLinks({
-    globs: ["https://crawlee.dev/**"],
-    label: "detail",
+    urls,
+    label: "syllabus",
   });
 });
 
-router.addHandler("detail", async ({ request, $, log, pushData }) => {
-  const title = $("title").text();
-  log.info(title, { url: request.loadedUrl });
+router.addHandler("syllabus", async ({ log, request, $, pushData }) => {
+  log.info(`processing: ${request.loadedUrl}`);
 
-  await pushData({
-    url: request.loadedUrl,
-    title,
-  });
+  const keys = $(".syllabus-head")
+    .map((_, el) => $(el).text())
+    .toArray();
+  const vals = $(".syllabus-normal")
+    .map((_, el) => $(el).text())
+    .toArray();
+
+  const data = parseRawSyllabusData(keys, vals);
+  await pushData(data);
 });

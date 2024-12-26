@@ -1,15 +1,11 @@
-// For more information, see https://crawlee.dev/
 import { CheerioCrawler } from "crawlee";
 
+import { SYLLABUS_START_URLS } from "./lib";
 import { router } from "./routes";
 
-const startUrls = ["https://crawlee.dev"];
-
 const crawler = new CheerioCrawler({
-  // proxyConfiguration: new ProxyConfiguration({ proxyUrls: ['...'] }),
   requestHandler: router,
-  // Comment this option to scrape the full website.
-  maxRequestsPerCrawl: 20,
+  maxRequestsPerCrawl: 10,
 });
 
-await crawler.run(startUrls);
+await crawler.run(SYLLABUS_START_URLS);
