@@ -1,5 +1,10 @@
 import path from "path";
 
+export const decodeHtmlEntities = (encoded: string): string =>
+  encoded.replace(/&#(x?)([0-9a-fA-F]+);/g, (_, hex, code: string) =>
+    String.fromCodePoint(parseInt(code, hex ? 16 : 10)),
+  );
+
 export const BASE_URL = "http://www.kyouikujouhou.eas.tmu.ac.jp/";
 
 export const SYLLABUS_PATH = "syllabus/2024/";
