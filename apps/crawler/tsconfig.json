@@ -1,5 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@brainoid-tmu/tsconfig/crawlee",
+  "extends": "@brainoid-tmu/tsconfig/base",
+  "compilerOptions": {
+    "outDir": "build"
+  },
   "include": ["./src/**/*"]
 }

@@ -28,13 +28,3 @@
   ]
 }
 ```
-
-## Crawlee
-
-```JSON
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@brainoid-tmu/tsconfig/crawlee",
-  "include": ["./src/**/*"]
-}
-```
