@@ -6,16 +6,16 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/main.ts",
-    "start": "node dist/main.js",
+    "start": "node build/main.js",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint .",
     "lint:tsc": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "crawlee": "^3.0.0",
-    "playwright": "*"
+    "crawlee": "^3.0.0"
   },
   "devDependencies": {
+    "@brainoid-tmu/domain": "*",
     "@brainoid-tmu/eslint": "*",
     "@brainoid-tmu/tsconfig": "*",
     "@types/node": "^22.0.0",

@@ -1,0 +1,35 @@
+{
+  "name": "@brainoid-tmu/domain",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Kousuke Takaki <yoseio@brainoid.dev>",
+  "files": [
+    "./build/**"
+  ],
+  "exports": {
+    ".": {
+      "import": "./build/index.js",
+      "require": "./build/index.js"
+    },
+    "./*": {
+      "import": "./build/*.js",
+      "require": "./build/*.js"
+    }
+  },
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "build": "tsc -b -v",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint .",
+    "lint:tsc": "tsc --pretty --noEmit"
+  },
+  "devDependencies": {
+    "@brainoid-tmu/eslint": "*",
+    "@brainoid-tmu/tsconfig": "*",
+    "eslint": "^9.17.0",
+    "typescript": "^5.1.6"
+  },
+  "private": true,
+  "type": "module"
+}
